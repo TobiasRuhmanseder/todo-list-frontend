@@ -1,5 +1,5 @@
-<form (onsubmit)="login()">
-    <input type="email" name="email" (ngModel)="email" required="true">
-    <input type="password" name="password" (ngModel)="password" required="true">
-    <button>Login</button>
+<form (ngSubmit)="login()" #loginForm="ngForm">
+    <input type="text" name="username" [(ngModel)]="username" required>
+    <input type="password" name="password" [(ngModel)]="password" required>
+    <button type="submit" [disabled]="!loginForm.form.valid" >Login</button>
 </form>
